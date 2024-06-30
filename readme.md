@@ -1,6 +1,6 @@
 ## Vue.js
 
-- Vuejsis a JavaScript **FRAMEWORK** used for building user interfaces, particularly for single-page applications (SPAs). It is designed to be incrementally adaptable and can be easily integrated into other projects.
+- Vuejs is a JavaScript **FRAMEWORK** used for building user interfaces, particularly for single-page applications (SPAs). It is designed to be incrementally adaptable and can be easily integrated into other projects.
 
 ### Why Vue.js?
 
@@ -108,3 +108,89 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 - 38:55 - Attribute Bindings
 - 44:48 - Dynamic Bindings
 - 47:17 - Styling In Depth
+
+---
+
+#### Reactivity?
+
+- Reactivity means that the framework can automatically update ( Ul) when the information behind it changes. It's a core concept that allows you to create `dynamic` and `Responsive` applications without manually manipulating the DOM.
+
+### Way to achive Reactive State.
+
+- reactive()
+- ref()
+
+#### reactive()
+
+- The reactive function is used to create reactive objects. A
+  reactive object is an object where changes to its properties
+  are automatically detected, `(triggering updates)` in the user
+  interface. It is a way to make an object "reactive" in Vue.js.
+
+- Can't store primitive data types
+
+#### ref()
+
+- ref() is used to create a reactive reference to a value. Unlike
+  the reactive function, which is used for creating reactive
+  objects, ref is specifically designed for creating reactive `single values`
+
+- You can store any value you want
+
+### Computed Properties
+
+- A computed property is a special kind of variable that `automatically updates` itseif whenever the data it depends on changes.
+
+- It's like a little worker that watches certain data, performs some work on it, and always gives you the most up-to-date result.
+
+### Conditional Rendering
+
+- Conditional rendering is refers to the ability to
+  conditionally display or hide elements in the user
+  interface based on certain `conditions` OR `Expressions`
+
+- v-if( `condition`)
+- v-else-if( `condition`)
+- v-else
+- v-show
+
+#### v-show
+
+- v-show directive is used for conditional rendering. It toggles the visibility of an element based on the truthiness of the provided expression. Unlike v-if, which completely adds or removes the element from the DOM, v-show toggles the CSS display property of the element to control its visibility while keeping it in the DOM.
+
+### List Rendering
+
+#### v-for
+
+- The v-for directive is used to `iterative over` an array or an object and render a template for each item in the collection.
+
+##### Efficient DOM Updates
+
+- When Vue renders a list of elements, it uses a virtual DOM to determine the most
+  efficient way to update the actual DOM. The key helps Vue identify which elements
+  have changed, been added, or been removed.
+
+- Without keys, Vue may need to recreate the entire DOM structure for each update,
+  which can be less efficient
+
+##### Avoiding Common Pitfalls
+
+- Using key can help avoid common pitfalls, such as duplicate key warnings in the
+  console or incorrect rendering when items are rearranged in the list.
+
+- Vue relies on keys to track the identity of elements, and using unique keys for each
+  item ensures that Vue can accurately update the DOM based on changes in the list.
+
+### Day2
+
+- 1:00:08 - Event Handlers In Vue
+- 1:11:33 - Reactivity & Reactive
+- 1:19:40 - ref()
+- 1:29:34 - Computed Properties
+- 1:35:12 - Conditional Rendering
+- 1:50:18 - v-for
+- 2:11:57 - v-model
+- 2:18:58 - Props
+- 2:46:16 - Component Event
+- 2:56:04 - Slots
+- 3:07:16 - Provide & Inject
