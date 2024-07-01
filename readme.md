@@ -189,6 +189,51 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 - 1:29:34 - Computed Properties
 - 1:35:12 - Conditional Rendering
 - 1:50:18 - v-for
+
+### v-model
+
+- v-model is a directive that provides two-way data binding on an input, textarea, or select element. It creates a `Connection` between the data in your component and the input field, allowing changes in one to automatically update the other and vice versa.
+
+#### Two Way Binding?
+
+- Two-way binding means that changes irt your code `automatically` update what you see on the screen, and vice versa. It's like a live
+  connection between your data and the user interface, making it easy to keep them in sync without writing a lot of extra code.
+
+### Props?
+
+- "props" (short for properties) are a way to pass data from a parent component to child component. Props allow you to communicate between components by allowing the parent component to pass data down to its child components. This is useful for creating reusable and modular components.
+
+- Props are immutable. we cannot change props value
+
+### Component Event?
+
+- Component events are a way for child components to
+  communicate with their `parent components`. They allow
+  child components to emit events (custom events) that can be listened to and handled by their parent components.
+
+#### Child Component Emits an Event
+
+- Inside a child component, you can use the $emit method to trigger a custom event. This event can carry data that you want to send to the parent.
+
+#### Parent Component Listens to the Event
+
+- In the parent component's template, you can use the v-on directive (or the shorthand @) to listen for the custom event emitted by the child.
+
+### Slot
+
+- A slot is like `space in a component` here you can put
+  different things. It allow you to create reusable components that can accept different content while maintaining a consistent structure.
+
+#### Fallback / Default Content
+
+- Fallback content in slots refers to the default content that is displayed when no content is provided for a particular slot. It's a way to ensure that a component still has `meaningful content`, even if the parent component does not pass any content to a specific slot.
+
+#### Named Slots
+
+- A named slot is a way to assign a specific name to a slot in a component. Unlike the default slot, which is unnamed and used when no explicit name is provided, named slots allow you to have multiple slots in a component and specify where the content should be inserted based on the slot's name.
+
+### Day3
+
 - 2:11:57 - v-model
 - 2:18:58 - Props
 - 2:46:16 - Component Event
