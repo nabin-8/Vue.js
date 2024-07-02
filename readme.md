@@ -262,6 +262,149 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 
 - Provide is an option in a parent component that allows it to share data or methods with its child components. It makes properties or methods available for injection into child components.
 
+```vue
+`App.vue`
+<script setup>
+const studentName = 'alex' const studentAge = 22 const studentLocation =
+['Earth', 'IDK']
+</script>
+<template>
+  <SchoolComponent
+    :studentName="studentName"
+    :studentAge="studentAge"
+    :studentLocation="studentLocation"
+  />
+</template>
+
+`School.vue`
+<script setup>
+import StudentComponent from "./StudentComponent.vue";
+defineProps(["studentName", "studentAge", "studentLocation"]);
+</script>
+
+<template>
+  <h1>Hello From school</h1>
+  <StudentComponent
+    :studentName="studentName"
+    :studentAge="studentAge"
+    :studentLocation="studentLocation"
+  />
+
+  `student.vue`;
+  <script setup>
+    defineProps(["studentName", "studentAge", "studentLocation"]);
+  </script>
+
+  <template>
+    <h1>From Student {{ studentName }}</h1>
+    <h1>From Student {{ studentAge }}</h1>
+    <h1>From Student {{ studentLocation }}</h1>
+  </template>
+</template>
+```
+
+### Lifecycle Hooks
+
+- `What is LifeCycle Methods/Hooks ?`
+- Each Vue component instance goes through a series of initialization
+  steps when it's created - for example, it needs to set up data
+  observation, compile the template, mount the instance to the DOM,
+  and update the DOM when data changes. Along the way, it also runs
+  functions called lifecycle hooks, giving users the opportunity to add
+  their own code at specific stages.
+
+- Lifecycle hooks are special methods provided by Vue.js that allow you to execute code at different stages of a component's lifecycle. These hooks provide developers with the ability to perform actions or respond to events at specific points during the creation, updating, and destruction of a Vue component.
+
+#### Lifecycle Hooks Methods
+
+1. beforeCreate
+1. created
+1. beforeMount
+1. mounted
+1. beforeUpdate
+1. updated
+1. beforeUnmount
+1. unmounted
+
+![hello](https://vuejs.org/assets/lifecycle.MuZLBFAS.png)
+
+#### Mount
+
+- Mounting means when a component is being created and
+  inserted into the DOM.
+
+#### Unmount
+
+- Unmounting means when a component is being removed
+  from the DOM.
+
+#### onBeforeMount()
+
+- Registers a hook to be called right before the component is to
+  be mounted.
+  When this hook is called, the component has finished setting
+  up its reactive state, but no DOM nodes have been created yet.
+  It is about to execute its DOM render effect for the first time.
+
+#### onMounted()
+
+- onMounted is used for executing logic or actions after a
+  component has been mounted to the DOM. This hook is
+  particularly useful for tasks that should occur once the
+  component is ready to interact with the user, such as fetching
+  data, setting up event listeners, or performing initial
+  calculations.
+
+#### onBeforeUpdate()
+
+- Registers a hook to be called right before the component is
+  about to update its DOM tree due to a reactive state change.
+  This hook can be used to access the DOM state before Vue
+  updates the DOM. It is also safe to modify component state
+  inside this hook.
+
+#### onhUpdated()
+
+- Registers a callback to be called after the component has
+  updated its DOM tree due to a reactive state change.
+  This hook is called after any DOM update of the component,
+  which can be caused by different state changes, because
+  multiple state changes can be batched into a single render
+  cycle for performance reasons.
+
+#### onBeforeUnmount()
+
+- Registers a hook to be called right before a component
+  instance is to be unmounted.
+  When this hook is called, the component instance is still fully
+  functional.
+
+#### onUnmounted()
+
+- Registers a callback to be called after the component has
+  been unmounted.
+
+- Use this hook to clean up manually created side effects such
+  as timers, DOM event listeners or server connections.
+
+### Watchers
+
+- "watcher" allows us to reactively `watch for changes` in a specific property or expression and perform some custom logic when that property or expression changes. Watchers are part of Vue.js's reactivity system, which enables the framework to automatically update the DOM when the underlying data changes.
+
+```vue
+<script>
+// watcher syntax
+watch(source, callback, options);
+
+// The “callback” function is called whenever some data changes.
+watch( source, (newVal, oldVal) = { })
+</script>
+```
+
+### Template Ref
+
+- A template ref is a way to create reference to a child component, element, or a DOM element within a template. This allows you to access and manipulate the referenced object directly in your component's logic. Refs are commonly used to interact with child components, trigger imperative actions, or access properties and methods of DOM elements.
+
 ### Day 4
 
 - 2:56:04 - Slots
@@ -269,6 +412,18 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 - 3:24:57 - Lifecycle Hooks
 - 3:38:29 - Watchers
 - 3:55:09 - Template Ref
+
+### Async Component
+
+- Async component is a feature that allows you to load a component
+  asynchronously, meaning the component is loaded and rendered
+  only when it's needed. This is particularly useful for optimizing the
+  initial loading time of your application, especially when dealing with
+  large and complex components that might not be necessary on the
+  first page load.
+
+### Day 5
+
 - 4:09:04 - Async Components
 - 4:17:00 - Composables
 - 4:27:13 - Custom Directives
