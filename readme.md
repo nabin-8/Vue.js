@@ -219,6 +219,12 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 
 - In the parent component's template, you can use the v-on directive (or the shorthand @) to listen for the custom event emitted by the child.
 
+### Day3
+
+- 2:11:57 - v-model
+- 2:18:58 - Props
+- 2:46:16 - Component Event
+
 ### Slot
 
 - A slot is like `space in a component` here you can put
@@ -232,10 +238,39 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 
 - A named slot is a way to assign a specific name to a slot in a component. Unlike the default slot, which is unnamed and used when no explicit name is provided, named slots allow you to have multiple slots in a component and specify where the content should be inserted based on the slot's name.
 
-### Day3
+### `After this all the codes are available in ch02`
 
-- 2:11:57 - v-model
-- 2:18:58 - Props
-- 2:46:16 - Component Event
+### Provide & Inject
+
+- The provide and inject options are used for providing and injecting properties or `data down the component` hierarchy. They enable a form of dependency injection, allowing a parent component to provide data or methods that child components can then inject and use.
+
+```mermaid
+       flowchart
+
+       A(App)
+       A--->B(Header)
+       A--->C(Card)
+       B--->BA(Nav)
+       C--->CA(Usre)
+       CA--->CAA(Data)
+       CA--->CAB(Time)
+
+       D(prop: data)
+```
+
+#### Provide
+
+- Provide is an option in a parent component that allows it to share data or methods with its child components. It makes properties or methods available for injection into child components.
+
+### Day 4
+
 - 2:56:04 - Slots
 - 3:07:16 - Provide & Inject
+- 3:24:57 - Lifecycle Hooks
+- 3:38:29 - Watchers
+- 3:55:09 - Template Ref
+- 4:09:04 - Async Components
+- 4:17:00 - Composables
+- 4:27:13 - Custom Directives
+- 4:39:08 - Dynamic Components
+- 4:45:21 - Data Fetching In Vue
