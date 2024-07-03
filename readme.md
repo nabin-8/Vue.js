@@ -417,10 +417,60 @@ watch( source, (newVal, oldVal) = { })
 
 - Async component is a feature that allows you to load a component
   asynchronously, meaning the component is loaded and rendered
-  only when it's needed. This is particularly useful for optimizing the
+  only `when it's needed`. This is particularly useful for optimizing the
   initial loading time of your application, especially when dealing with
   large and complex components that might not be necessary on the
   first page load.
+
+
+#### defineAsyncComponent() |
+- Is used to create asynchronous components. Async components |
+are loaded and resolved asynchronously, which can be helpful for |
+improving the initial loading performance of your application by |
+deferring the loading of certain components until they are actually |
+needed. |
+
+```javascript
+defineAsyncComponent(()=>{
+  import('./ComponentPath.vue')
+})
+```
+
+### Composable |
+- A composable is a function or set of functions that encapsulate |
+a piece of logic and can be composed together to build the |
+functionality of a Vue component. Composables are designed |
+to be reusable and shareable, making it easier to manage |
+complex logic and behavior in a Vue application. |
+
+### Custom Directives |
+- Vue provides a set of built-in directives such as |
+v-if, v-for, v-model, etc. Custom directives allow |
+you to define your own behavior that can be |
+applied to elements in the template. |
+
+#### How to create one? |
+-  A custom directive is defined as an object |
+  containing lifecycle hooks similar to component |
+  hooks eg. mounted() unmounted etc. |
+
+
+```javascript
+
+// syntax
+const vFormatDiv={
+  mountef:(el,binding)=>{
+    el.style.fontsize='4rem', 
+    el.style.fontStyle='italic'
+  }
+}
+```
+
+### Dynamic Components |
+- Dynamic components refer to the ability to dynamically |
+switch between different components based on certain |
+(conditions or user interactions. This is achieved using the |
+component element and the is attribute. |
 
 ### Day 5
 
