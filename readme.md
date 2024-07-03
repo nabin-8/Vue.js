@@ -98,16 +98,16 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 
 ### Day1
 
-- 00:00 - Intro
-- 00:16 - What is Vue.js?
-- 03:10 - Side Talk
-- 05:28 - Installations
-- 10:46 - Folder Structure
-- 18:32 - Component In Depth
-- 32:43 - Text Interpolation
-- 38:55 - Attribute Bindings
-- 44:48 - Dynamic Bindings
-- 47:17 - Styling In Depth
+- Intro
+- What is Vue.js?
+- Side Talk
+- Installations
+- Folder Structure
+- Component In Depth
+- Text Interpolation
+- Attribute Bindings
+- Dynamic Bindings
+- Styling In Depth
 
 ---
 
@@ -181,14 +181,16 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 - Vue relies on keys to track the identity of elements, and using unique keys for each
   item ensures that Vue can accurately update the DOM based on changes in the list.
 
+---
+
 ### Day2
 
-- 1:00:08 - Event Handlers In Vue
-- 1:11:33 - Reactivity & Reactive
-- 1:19:40 - ref()
-- 1:29:34 - Computed Properties
-- 1:35:12 - Conditional Rendering
-- 1:50:18 - v-for
+- Event Handlers In Vue
+- Reactivity & Reactive
+- ref()
+- Computed Properties
+- Conditional Rendering
+- v-for
 
 ### v-model
 
@@ -221,9 +223,11 @@ Attribute binding is a way to bind HTML `attributes` to data in Vue instance.
 
 ### Day3
 
-- 2:11:57 - v-model
-- 2:18:58 - Props
-- 2:46:16 - Component Event
+---
+
+- v-model
+- Props
+- Component Event
 
 ### Slot
 
@@ -407,11 +411,13 @@ watch( source, (newVal, oldVal) = { })
 
 ### Day 4
 
-- 2:56:04 - Slots
-- 3:07:16 - Provide & Inject
-- 3:24:57 - Lifecycle Hooks
-- 3:38:29 - Watchers
-- 3:55:09 - Template Ref
+---
+
+- Slots
+- Provide & Inject
+- Lifecycle Hooks
+- Watchers
+- Template Ref
 
 ### Async Component
 
@@ -422,60 +428,65 @@ watch( source, (newVal, oldVal) = { })
   large and complex components that might not be necessary on the
   first page load.
 
-
 #### defineAsyncComponent() |
+
 - Is used to create asynchronous components. Async components |
-are loaded and resolved asynchronously, which can be helpful for |
-improving the initial loading performance of your application by |
-deferring the loading of certain components until they are actually |
-needed. |
+  are loaded and resolved asynchronously, which can be helpful for |
+  improving the initial loading performance of your application by |
+  deferring the loading of certain components until they are actually |
+  needed. |
 
 ```javascript
-defineAsyncComponent(()=>{
-  import('./ComponentPath.vue')
-})
+defineAsyncComponent(() => {
+  import("./ComponentPath.vue");
+});
 ```
 
 ### Composable |
+
 - A composable is a function or set of functions that encapsulate |
-a piece of logic and can be composed together to build the |
-functionality of a Vue component. Composables are designed |
-to be reusable and shareable, making it easier to manage |
-complex logic and behavior in a Vue application. |
+  a piece of logic and can be composed together to build the |
+  functionality of a Vue component. Composables are designed |
+  to be reusable and shareable, making it easier to manage |
+  complex logic and behavior in a Vue application. |
 
 ### Custom Directives |
+
 - Vue provides a set of built-in directives such as |
-v-if, v-for, v-model, etc. Custom directives allow |
-you to define your own behavior that can be |
-applied to elements in the template. |
+  v-if, v-for, v-model, etc. Custom directives allow |
+  you to define your own behavior that can be |
+  applied to elements in the template. |
 
 #### How to create one? |
--  A custom directive is defined as an object |
+
+- A custom directive is defined as an object |
   containing lifecycle hooks similar to component |
   hooks eg. mounted() unmounted etc. |
 
-
 ```javascript
-
 // syntax
-const vFormatDiv={
-  mountef:(el,binding)=>{
-    el.style.fontsize='4rem', 
-    el.style.fontStyle='italic'
-  }
-}
+const vFormatDiv = {
+  mountef: (el, binding) => {
+    (el.style.fontsize = "4rem"), (el.style.fontStyle = "italic");
+  },
+};
 ```
 
 ### Dynamic Components |
+
 - Dynamic components refer to the ability to dynamically |
-switch between different components based on certain |
-(conditions or user interactions. This is achieved using the |
-component element and the is attribute. |
+  switch between different components based on certain |
+  (conditions or user interactions. This is achieved using the |
+  component element and the is attribute. |
 
 ### Day 5
 
-- 4:09:04 - Async Components
-- 4:17:00 - Composables
-- 4:27:13 - Custom Directives
-- 4:39:08 - Dynamic Components
-- 4:45:21 - Data Fetching In Vue
+---
+
+- Async Components
+- Composables
+- Custom Directives
+- Dynamic Components
+- Data Fetching In Vue
+
+### Next Projects
